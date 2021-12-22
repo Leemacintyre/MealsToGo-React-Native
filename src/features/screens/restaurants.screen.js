@@ -7,10 +7,8 @@ import { Spacer } from "../../components/spacer/spacer.component";
 import { SafeArea } from "../../components/utilities/safe-area.component";
 import { RestaurantsContext } from "../../services/restaurants/restaurants.context";
 import { ActivityIndicator, Colors } from 'react-native-paper';
+import { Search } from "../restaurants/components/search.component";
 
-const SearchContainer = styled(View)`
-  padding: ${(props) => props.theme.space[3]};
-`;
 
 const RestaurantList = styled(FlatList).attrs({
     contentContainerStyle: {
@@ -40,9 +38,7 @@ export const RestaurantsScreen = () => {
 
                 </LoadingContainer>
                 }
-                <SearchContainer>
-                    <Searchbar/>
-                </SearchContainer>
+               <Search />
                 <RestaurantList
                     data={restaurants}
                     renderItem={({item}) => {
