@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, Pressable, TouchableOpacity } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import { RestaurantInfoCard } from '../restaurants/components/restaurant-info-card.component';
 import { Spacer } from "../../components/spacer/spacer.component";
@@ -23,11 +23,11 @@ const LoadingContainer = styled(View)`
   left: 50%;
 `
 
-export const RestaurantsScreen = () => {
+export const RestaurantsScreen = ({navigation}) => {
     const {isLoading, error, restaurants} = useContext(RestaurantsContext);
     return (
         <>
-            <SafeArea>
+            <SafeArea >
                 {isLoading &&
                 <LoadingContainer>
                     <ActivityIndicator
@@ -35,17 +35,21 @@ export const RestaurantsScreen = () => {
                         color={Colors.limeA700}
                         size={100}
                         style={{marginLeft: -50, marginTop: -50}}/>
-
                 </LoadingContainer>
                 }
-               <Search />
+                <Search/>
                 <RestaurantList
                     data={restaurants}
                     renderItem={({item}) => {
                         return (
-                            <Spacer position="bottom" size="large">
-                                <RestaurantInfoCard restaurant={item}/>
-                            </Spacer>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('RestaurantDetail',{
+                                    restaurant: item
+                                })}>
+                                <Spacer position="bottom" size="large">
+                                    <RestaurantInfoCard restaurant={item}/>
+                                </Spacer>
+                            </TouchableOpacity>
                         );
                     }}
                     keyExtractor={(item) => item.name}
