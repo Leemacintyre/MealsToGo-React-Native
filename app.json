@@ -1,4 +1,5 @@
 {
   "name": "MealsToGo",
-  "displayName": "MealsToGo"
+  "displayName": "MealsToGo",
+  "icon": "src/images/favicon.ico"
 }

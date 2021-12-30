@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text,View } from 'react-native'
+import { Text, View } from 'react-native'
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
 import { RestaurantsScreen } from "../../features/screens/restaurants.screen";
 import { RestaurantDetailScreen } from "../../features/screens/restaurant-detail.screen";
