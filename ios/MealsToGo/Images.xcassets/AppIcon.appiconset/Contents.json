@@ -1,11 +1,13 @@
 {
   "images" : [
     {
+      "filename" : "pizza 40x40.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
+      "filename" : "pizza 60x60.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
@@ -31,11 +33,13 @@
       "size" : "40x40"
     },
     {
+      "filename" : "pizza 120x120.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
+      "filename" : "pizza 180x180.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
